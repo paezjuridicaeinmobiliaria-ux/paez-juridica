@@ -1,0 +1,975 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Páez Jurídica e Inmobiliaria | Soluciones legales</title>
+
+    <meta name="description" content="Páez Jurídica e Inmobiliaria. Soluciones jurídicas y servicios inmobiliarios orientados a la defensa de sus intereses.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0b0b0b;
+            color: #f5f5f5;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+
+        :root {
+            --negro: #0b0b0b;
+            --negro-suave: #121212;
+            --dorado: #c9a45c;
+            --dorado-claro: #e1c27a;
+            --blanco: #f5f5f5;
+            --gris: #b8b8b8;
+        }
+
+        /* =========================
+           NAVEGACIÓN
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 22px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.4s ease;
+        }
+
+        header.scrolled {
+            background: rgba(11, 11, 11, 0.96);
+            backdrop-filter: blur(12px);
+            padding: 15px 6%;
+            border-bottom: 1px solid rgba(201, 164, 92, 0.2);
+        }
+
+        .logo {
+            color: var(--blanco);
+            text-decoration: none;
+            line-height: 0.9;
+        }
+
+        .logo-principal {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+        }
+
+        .logo-secundario {
+            display: block;
+            color: var(--dorado);
+            font-size: 0.55rem;
+            letter-spacing: 3px;
+            margin-top: 7px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--dorado);
+        }
+
+        .nav-contacto {
+            border: 1px solid var(--dorado);
+            padding: 10px 17px;
+            color: var(--dorado);
+        }
+
+        .nav-contacto:hover {
+            background: var(--dorado);
+            color: #000;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.7rem;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 130px 8% 80px;
+            background:
+                radial-gradient(circle at 80% 30%, rgba(201,164,92,0.10), transparent 30%),
+                linear-gradient(135deg, #080808 0%, #101010 55%, #080808 100%);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(201,164,92,0.12);
+            border-radius: 50%;
+            right: -180px;
+            top: 18%;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            border: 1px solid rgba(201,164,92,0.08);
+            border-radius: 50%;
+            right: -110px;
+            top: 27%;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 2;
+            animation: aparecer 1.2s ease forwards;
+        }
+
+        .hero-etiqueta {
+            color: var(--dorado);
+            font-size: 0.75rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(4rem, 9vw, 8rem);
+            font-weight: 500;
+            line-height: 0.82;
+            letter-spacing: 4px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: var(--dorado);
+        }
+
+        .hero-subtitulo {
+            font-size: clamp(1rem, 2vw, 1.35rem);
+            letter-spacing: 5px;
+            color: #ddd;
+            text-transform: uppercase;
+            margin-bottom: 35px;
+        }
+
+        .hero-descripcion {
+            max-width: 650px;
+            color: var(--gris);
+            font-size: 1rem;
+            margin-bottom: 40px;
+        }
+
+        .boton {
+            display: inline-block;
+            text-decoration: none;
+            padding: 15px 30px;
+            border: 1px solid var(--dorado);
+            color: var(--dorado);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.35s ease;
+        }
+
+        .boton:hover {
+            background: var(--dorado);
+            color: #080808;
+            transform: translateY(-3px);
+        }
+
+        .boton-solido {
+            background: var(--dorado);
+            color: #080808;
+            margin-right: 12px;
+        }
+
+        .boton-solido:hover {
+            background: var(--dorado-claro);
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+           SECCIONES
+        ========================= */
+
+        section {
+            padding: 110px 8%;
+        }
+
+        .seccion-oscura {
+            background: #0b0b0b;
+        }
+
+        .seccion-gris {
+            background: #111111;
+        }
+
+        .encabezado-seccion {
+            max-width: 720px;
+            margin-bottom: 60px;
+        }
+
+        .etiqueta {
+            color: var(--dorado);
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            margin-bottom: 14px;
+        }
+
+        .titulo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.7rem, 5vw, 4.5rem);
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .texto {
+            color: var(--gris);
+            max-width: 700px;
+        }
+
+        /* =========================
+           FIRMA
+        ========================= */
+
+        .firma-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .firma-numero {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 8rem;
+            color: rgba(201,164,92,0.12);
+            line-height: 0.7;
+            margin-bottom: 20px;
+        }
+
+        .firma-destacado {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--dorado-claro);
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           SERVICIOS
+        ========================= */
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(201,164,92,0.2);
+        }
+
+        .servicio {
+            background: #0e0e0e;
+            padding: 45px 35px;
+            min-height: 260px;
+            transition: 0.4s ease;
+        }
+
+        .servicio:hover {
+            background: #171717;
+            transform: translateY(-5px);
+        }
+
+        .servicio-numero {
+            color: var(--dorado);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        .servicio h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .servicio p {
+            color: #aaa;
+            font-size: 0.88rem;
+        }
+
+        /* =========================
+           DIFERENCIALES
+        ========================= */
+
+        .diferenciales {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .diferencial {
+            border-top: 1px solid rgba(201,164,92,0.45);
+            padding-top: 25px;
+        }
+
+        .diferencial h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            margin-bottom: 12px;
+        }
+
+        .diferencial p {
+            color: #aaa;
+            font-size: 0.85rem;
+        }
+
+        /* =========================
+           CONTACTO
+        ========================= */
+
+        .contacto {
+            text-align: center;
+            background:
+                radial-gradient(circle at center, rgba(201,164,92,0.09), transparent 45%),
+                #0a0a0a;
+        }
+
+        .contacto .encabezado-seccion {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contacto-datos {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin: 45px 0;
+            flex-wrap: wrap;
+        }
+
+        .dato {
+            color: #bbb;
+        }
+
+        .dato strong {
+            display: block;
+            color: var(--dorado);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 35px 8%;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        footer p {
+            color: #777;
+            font-size: 0.7rem;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 3px;
+            color: var(--dorado);
+        }
+
+        /* =========================
+           WHATSAPP
+        ========================= */
+
+        .whatsapp {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            z-index: 999;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            transition: 0.3s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        /* =========================
+           MÓVIL
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                position: absolute;
+                top: 75px;
+                right: 6%;
+                background: #111;
+                border: 1px solid rgba(201,164,92,0.25);
+                padding: 20px;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                min-width: 220px;
+            }
+
+            nav.activo {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .firma-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .servicios-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .diferenciales {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 18px 6%;
+            }
+
+            .logo-principal {
+                font-size: 1.6rem;
+            }
+
+            .hero {
+                padding: 130px 7% 80px;
+            }
+
+            .hero h1 {
+                font-size: 4.3rem;
+            }
+
+            .hero-subtitulo {
+                font-size: 0.8rem;
+                letter-spacing: 3px;
+            }
+
+            .boton {
+                width: 100%;
+                text-align: center;
+                margin: 5px 0;
+            }
+
+            .boton-solido {
+                margin-right: 0;
+            }
+
+            section {
+                padding: 80px 7%;
+            }
+
+            .diferenciales {
+                grid-template-columns: 1fr;
+            }
+
+            .contacto-datos {
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header id="header">
+
+    <a href="#inicio" class="logo">
+        <span class="logo-principal">PÁEZ</span>
+        <span class="logo-secundario">JURÍDICA E INMOBILIARIA</span>
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav id="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#firma">La firma</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#diferenciales">Nosotros</a>
+        <a href="#contacto" class="nav-contacto">Contacto</a>
+    </nav>
+
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <div class="hero-etiqueta">
+                Jurídica & Inmobiliaria
+            </div>
+
+            <h1>
+                PÁEZ<span>.</span>
+            </h1>
+
+            <div class="hero-subtitulo">
+                Soluciones jurídicas con visión estratégica
+            </div>
+
+            <p class="hero-descripcion">
+                Brindamos asesoría y acompañamiento jurídico orientado a la
+                protección de sus derechos, patrimonio e intereses.
+            </p>
+
+            <a href="#contacto" class="boton boton-solido">
+                Solicitar asesoría
+            </a>
+
+            <a href="#servicios" class="boton">
+                Conocer servicios
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- LA FIRMA -->
+
+    <section class="seccion-gris" id="firma">
+
+        <div class="firma-grid">
+
+            <div>
+
+                <div class="firma-numero">
+                    01
+                </div>
+
+                <div class="etiqueta">
+                    Nuestra firma
+                </div>
+
+                <h2 class="titulo">
+                    Seguridad jurídica para decisiones importantes.
+                </h2>
+
+            </div>
+
+            <div>
+
+                <p class="firma-destacado">
+                    Una firma orientada a brindar soluciones jurídicas
+                    claras, estratégicas y eficientes.
+                </p>
+
+                <p class="texto">
+                    En PÁEZ Jurídica e Inmobiliaria entendemos que cada
+                    situación requiere una estrategia particular. Por eso
+                    ofrecemos acompañamiento jurídico personalizado,
+                    procurando proteger los intereses de nuestros clientes
+                    y brindarles herramientas para tomar decisiones con
+                    mayor seguridad.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICIOS -->
+
+    <section class="seccion-oscura" id="servicios">
+
+        <div class="encabezado-seccion">
+
+            <div class="etiqueta">
+                Áreas de servicio
+            </div>
+
+            <h2 class="titulo">
+                Soluciones para sus necesidades jurídicas.
+            </h2>
+
+            <p class="texto">
+                Nuestro enfoque combina asesoría jurídica y acompañamiento
+                estratégico para atender diferentes necesidades legales y
+                patrimoniales.
+            </p>
+
+        </div>
+
+
+        <div class="servicios-grid">
+
+            <article class="servicio">
+
+                <div class="servicio-numero">01</div>
+
+                <h3>Derecho Civil</h3>
+
+                <p>
+                    Asesoría y representación en asuntos relacionados con
+                    obligaciones, contratos, responsabilidad civil y
+                    conflictos entre particulares.
+                </p>
+
+            </article>
+
+
+            <article class="servicio">
+
+                <div class="servicio-numero">02</div>
+
+                <h3>Derecho Laboral</h3>
+
+                <p>
+                    Acompañamiento jurídico en relaciones laborales,
+                    contratos, terminaciones, reclamaciones y conflictos
+                    derivados del vínculo laboral.
+                </p>
+
+            </article>
+
+
+            <article class="servicio">
+
+                <div class="servicio-numero">03</div>
+
+                <h3>Derecho Inmobiliario</h3>
+
+                <p>
+                    Asesoría en operaciones inmobiliarias, contratos,
+                    estudios jurídicos y protección de los intereses
+                    relacionados con bienes inmuebles.
+                </p>
+
+            </article>
+
+
+            <article class="servicio">
+
+                <div class="servicio-numero">04</div>
+
+                <h3>Contratos</h3>
+
+                <p>
+                    Elaboración, revisión y análisis jurídico de contratos
+                    para reducir riesgos y proteger los intereses de
+                    nuestros clientes.
+                </p>
+
+            </article>
+
+
+            <article class="servicio">
+
+                <div class="servicio-numero">05</div>
+
+                <h3>Derecho de Familia</h3>
+
+                <p>
+                    Orientación jurídica en asuntos relacionados con las
+                    relaciones familiares y la protección de los derechos
+                    de sus integrantes.
+                </p>
+
+            </article>
+
+
+            <article class="servicio">
+
+                <div class="servicio-numero">06</div>
+
+                <h3>Asesoría Jurídica</h3>
+
+                <p>
+                    Orientación preventiva y estratégica para analizar
+                    situaciones jurídicas y encontrar alternativas de
+                    solución.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- DIFERENCIALES -->
+
+    <section class="seccion-gris" id="diferenciales">
+
+        <div class="encabezado-seccion">
+
+            <div class="etiqueta">
+                Nuestra forma de trabajar
+            </div>
+
+            <h2 class="titulo">
+                Más que asesoría. Estrategia.
+            </h2>
+
+        </div>
+
+
+        <div class="diferenciales">
+
+            <div class="diferencial">
+
+                <h3>Confianza</h3>
+
+                <p>
+                    Construimos relaciones profesionales basadas en
+                    transparencia, comunicación y responsabilidad.
+                </p>
+
+            </div>
+
+
+            <div class="diferencial">
+
+                <h3>Estrategia</h3>
+
+                <p>
+                    Analizamos cada situación para plantear alternativas
+                    jurídicas orientadas a sus objetivos.
+                </p>
+
+            </div>
+
+
+            <div class="diferencial">
+
+                <h3>Cercanía</h3>
+
+                <p>
+                    Procuramos que nuestros clientes comprendan su situación
+                    y las alternativas disponibles.
+                </p>
+
+            </div>
+
+
+            <div class="diferencial">
+
+                <h3>Compromiso</h3>
+
+                <p>
+                    Asumimos cada asunto con responsabilidad y atención
+                    personalizada.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACTO -->
+
+    <section class="contacto" id="contacto">
+
+        <div class="encabezado-seccion">
+
+            <div class="etiqueta">
+                Hablemos
+            </div>
+
+            <h2 class="titulo">
+                ¿Necesita asesoría jurídica?
+            </h2>
+
+            <p class="texto">
+                Cuéntenos brevemente su situación y encontremos juntos
+                una alternativa jurídica.
+            </p>
+
+        </div>
+
+
+        <div class="contacto-datos">
+
+            <div class="dato">
+                <strong>WhatsApp</strong>
+                Próximamente
+            </div>
+
+            <div class="dato">
+                <strong>Correo</strong>
+                Próximamente
+            </div>
+
+            <div class="dato">
+                <strong>Ubicación</strong>
+                Colombia
+            </div>
+
+        </div>
+
+
+        <a href="#" class="boton boton-solido">
+            Solicitar consulta
+        </a>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">
+        PÁEZ
+    </div>
+
+    <p>
+        © 2026 PÁEZ Jurídica e Inmobiliaria. Todos los derechos reservados.
+    </p>
+
+    <p>
+        Soluciones jurídicas e inmobiliarias.
+    </p>
+
+</footer>
+
+
+<!-- BOTÓN WHATSAPP -->
+
+<a href="#" class="whatsapp" aria-label="WhatsApp">
+    ☎
+</a>
+
+
+<script>
+
+    /* Menú móvil */
+
+    function toggleMenu() {
+        document.getElementById("menu").classList.toggle("activo");
+    }
+
+
+    /* Cambiar navegación al hacer scroll */
+
+    window.addEventListener("scroll", function() {
+
+        const header = document.getElementById("header");
+
+        if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+
+    });
+
+
+    /* Cerrar menú móvil al seleccionar una opción */
+
+    document.querySelectorAll("#menu a").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+            document.getElementById("menu").classList.remove("activo");
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
+```
