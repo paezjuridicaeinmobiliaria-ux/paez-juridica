@@ -1433,7 +1433,17 @@
         });
 
     });
+document.querySelectorAll(".faq-pregunta").forEach(function(pregunta) {
 
+    pregunta.addEventListener("click", function() {
+
+        const item = this.parentElement;
+
+        item.classList.toggle("activo");
+
+    });
+
+});
 </script>
 
 </body>
