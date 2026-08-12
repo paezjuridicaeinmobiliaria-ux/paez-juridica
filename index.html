@@ -329,96 +329,116 @@
             margin-bottom: 20px;
         }
 
-        /* =========================
-           SERVICIOS
-        ========================= */
+       
 
-        .servicios-grid {
+       /* =========================
+   ÁREAS DE SERVICIO
+========================= */
+
+.areas-servicios {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1px;
     background: rgba(201,164,92,0.25);
 }
 
-.servicio {
+.area-servicios {
     position: relative;
-    min-height: 520px;
-    padding: 55px 45px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    background: #0e0e0e;
     overflow: hidden;
-    background-size: cover;
-    background-position: center;
+    min-height: 720px;
 }
 
-.servicio::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,0.95) 0%,
-        rgba(0,0,0,0.65) 45%,
-        rgba(0,0,0,0.15) 100%
-    );
-    z-index: 0;
+.area-imagen {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
 }
 
-.servicio-contenido {
-    position: relative;
-    z-index: 1;
-    max-width: 520px;
+.area-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
 }
 
-.servicio-numero {
+.area-servicios:hover .area-imagen img {
+    transform: scale(1.04);
+}
+
+.area-contenido {
+    padding: 40px 40px 50px;
+}
+
+.area-etiqueta {
     color: var(--dorado);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    letter-spacing: 3px;
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
     margin-bottom: 15px;
 }
 
-.servicio h3 {
+.area-contenido h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.8rem;
+    font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 500;
-    margin-bottom: 15px;
-    color: var(--blanco);
+    line-height: 1.05;
+    margin-bottom: 18px;
 }
 
-.servicio p {
-    color: #ddd;
+.area-descripcion {
+    color: #aaa;
     font-size: 0.9rem;
     line-height: 1.8;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
 }
 
-.servicio-lista {
+.servicios-lista {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    flex-direction: column;
 }
 
-.servicio-lista span {
-    border: 1px solid rgba(201,164,92,0.45);
-    padding: 7px 12px;
-    color: var(--dorado-claro);
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+.servicio-item {
+    display: grid;
+    grid-template-columns: 45px 1fr;
+    gap: 15px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(201,164,92,0.18);
 }
 
-/* IMAGEN JURÍDICA */
-
-.servicio-juridica {
-    background-image: url("JUSTICIA Y FONDO TRIBUNAL.png");
+.servicio-item > span {
+    color: var(--dorado);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
 }
 
-/* IMAGEN INMOBILIARIA */
+.servicio-item h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
 
-.servicio-inmobiliaria {
-    background-image: url("EDIFICIO.png");
+.servicio-item p {
+    color: #888;
+    font-size: 0.78rem;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MÓVIL - ÁREAS DE SERVICIO
+========================= */
+
+@media (max-width: 900px) {
+
+   
+
+    .area-servicios {
+        min-height: auto;
+    }
+
 }
 
         /* =========================
