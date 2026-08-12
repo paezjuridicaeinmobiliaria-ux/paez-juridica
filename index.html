@@ -499,7 +499,63 @@
             color: #aaa;
             font-size: 0.85rem;
         }
+/* =========================
+   PREGUNTAS FRECUENTES
+========================= */
 
+.faq {
+    max-width: 900px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(201,164,92,0.25);
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(201,164,92,0.25);
+}
+
+.faq-pregunta {
+    width: 100%;
+    padding: 25px 5px;
+    background: transparent;
+    border: none;
+    color: var(--blanco);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.faq-pregunta span {
+    color: var(--dorado);
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+.faq-respuesta {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.faq-respuesta p {
+    color: #aaa;
+    font-size: 0.88rem;
+    line-height: 1.8;
+    padding: 0 40px 25px 5px;
+}
+
+.faq-item.activo .faq-respuesta {
+    max-height: 300px;
+}
+
+.faq-item.activo .faq-pregunta span {
+    transform: rotate(45deg);
+}
         /* =========================
            CONTACTO
         ========================= */
@@ -1097,7 +1153,143 @@
 
     </section>
 
+<!-- PREGUNTAS FRECUENTES -->
 
+<section class="seccion-oscura" id="preguntas">
+
+    <div class="encabezado-seccion">
+
+        <div class="etiqueta">
+            Preguntas frecuentes
+        </div>
+
+        <h2 class="titulo">
+            Resolvemos sus principales inquietudes.
+        </h2>
+
+        <p class="texto">
+            Conozca algunos aspectos importantes sobre nuestra atención
+            y los servicios que ofrecemos.
+        </p>
+
+    </div>
+
+
+    <div class="faq">
+
+        <div class="faq-item">
+
+            <button class="faq-pregunta">
+                ¿La primera consulta tiene costo?
+                <span>+</span>
+            </button>
+
+            <div class="faq-respuesta">
+                <p>
+                    Las primeras consultas no tienen costo. Nuestro objetivo
+                    es conocer brevemente su situación, identificar sus
+                    necesidades y orientarle sobre las posibles alternativas
+                    jurídicas.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-pregunta">
+                ¿La asesoría puede realizarse de manera virtual?
+                <span>+</span>
+            </button>
+
+            <div class="faq-respuesta">
+                <p>
+                    Sí. Ofrecemos atención virtual para facilitar el acceso
+                    a nuestros servicios, además de atención presencial
+                    cuando sea necesario.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-pregunta">
+                ¿Qué documento necesito para solicitar una asesoría?
+                <span>+</span>
+            </button>
+
+            <div class="faq-respuesta">
+                <p>
+                    Para iniciar la atención puede ser necesario presentar
+                    su documento de identificación, ya sea cédula de
+                    ciudadanía o tarjeta de identidad, según corresponda.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-pregunta">
+                ¿Qué servicios ofrece PÁEZ Jurídica e Inmobiliaria?
+                <span>+</span>
+            </button>
+
+            <div class="faq-respuesta">
+                <p>
+                    Contamos con servicios de asesoría y acompañamiento
+                    jurídico en diferentes áreas del derecho, además de
+                    servicios relacionados con operaciones y asuntos
+                    inmobiliarios.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-pregunta">
+                ¿Cómo puedo solicitar una asesoría?
+                <span>+</span>
+            </button>
+
+            <div class="faq-respuesta">
+                <p>
+                    Puede comunicarse con nosotros a través de WhatsApp,
+                    Instagram o correo electrónico. Nuestro equipo recibirá
+                    su solicitud y le indicará los pasos para continuar.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-pregunta">
+                ¿También prestan servicios inmobiliarios?
+                <span>+</span>
+            </button>
+
+            <div class="faq-respuesta">
+                <p>
+                    Sí. Ofrecemos acompañamiento jurídico en operaciones
+                    inmobiliarias, incluyendo compraventa de inmuebles,
+                    arrendamientos, estudios de títulos, contratos y otras
+                    necesidades relacionadas con bienes inmuebles.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
     <!-- CONTACTO -->
 
     <section class="contacto" id="contacto">
