@@ -379,16 +379,23 @@
 
 .area-imagen {
     width: 100%;
-    height: 300px;
+    height: 420px;
     overflow: hidden;
 }
 
 .area-imagen img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     display: block;
-    transition: transform 0.6s ease;
+    object-fit: cover;
+    object-position: center;
+}
+        .area-juridica .area-imagen img {
+    object-position: center center;
+}
+
+.area-inmobiliaria .area-imagen img {
+    object-position: center center;
 }
 
 .area-servicios:hover .area-imagen img {
@@ -676,6 +683,13 @@
     .area-imagen {
         height: 320px;
     }
+            .area-juridica .area-imagen img {
+    object-position: center center;
+}
+
+.area-inmobiliaria .area-imagen img {
+    object-position: center center;
+}
 
     .area-imagen img {
         width: 100%;
